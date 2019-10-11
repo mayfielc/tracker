@@ -1,5 +1,6 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { Router, Route } from 'react-router-dom';
+import { createBrowserHistory } from "history";
 import "bootstrap/dist/css/bootstrap.min.css"
 
 import Navbar from "./components/navbar";
@@ -8,10 +9,12 @@ import EditExercise from "./components/edit-ex";
 import CreateExercise from "./components/create-ex";
 import CreateUser from "./components/create-user";
 
+const history = createBrowserHistory();
+
 
 function App() {
   return (
-    <Router>
+    <Router history={history}>
       <div className="container">
       <Navbar />
       <br/>
